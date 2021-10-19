@@ -8,20 +8,17 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    // public function getCart(){
-    //     return view('pages.order.cart');
-    // }
 
     public function Cart(Request $request){
         $product = Product::find($request->id);
         $cart = new Cart();
         $cart->products_id = $request->id;
-        $cart->quantity = $request->quantity;
-        $cart->total_price = $request->total_price;
-        $cart->total = $request->total;
+        $cart->quantity = 1;
+        $cart->total_price = $product->price * $request->quantity;
+        $cart->total = 1;
         $cart->save();
 
-        return redirect('/products');
+        return redirect('/carts');
     }
 
     public function index(){

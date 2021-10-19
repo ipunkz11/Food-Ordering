@@ -23,9 +23,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             
             $user = Auth::user();
-            if($user->role == 'Owner'){
-                return redirect()->intended('/dashboard');
-            }elseif($user->role == 'Admin'){
+            if($user->role == 'Owner' && 'Admin'){
                 return redirect()->intended('/dashboard');
             }else{
                 return redirect()->intended('/products');

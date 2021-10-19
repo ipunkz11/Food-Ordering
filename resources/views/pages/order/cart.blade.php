@@ -20,7 +20,7 @@
                         @foreach ($carts as $item)
                         <tr>
                             <td>
-                                <img src="{{ asset('storage') }}" width="50" alt="" class="img img-thumbnail pull-left">
+                                <img src="{{ asset('storage') }}/{{ $item->products->image }}" width="50" alt="" class="img img-thumbnail pull-left">
                                 <span class="pull-left cart-product-option">
 
                                     <strong>{{ $item->products->name }}</strong><br />
@@ -34,7 +34,7 @@
                             </td>
                             <td><input type="number" min="1" name="product_quantity_p2" value="4" class="form-control product_quantity_p2" /></td>
                             <td>{{ $item->products->price }}</td>
-                            <td><p class="total_ammount_p2">{{ $item->total_price }}</p></td>
+                            <td><p class="total_ammount_p2">{{ $item->products->total_price }}</p></td>
                         </tr>
                         @endforeach 
 

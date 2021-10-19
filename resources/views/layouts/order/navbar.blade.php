@@ -259,7 +259,6 @@
                             <ul class="wsmenu-submenu">
                                 <li><a href="{{ 'register' }}"><i class="fa fa-black-tie"></i>Register</a></li>
                                 <li><a href="{{ '/' }}"><i class="fa fa-sign-in"></i>Login</a></li>
-                                <li><a href="{{ 'logout' }}"><i class="fa fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
                     @endauth
